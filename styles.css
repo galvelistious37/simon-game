@@ -63,4 +63,14 @@ body {
   .btn-start{
     visibility: visible;
   }
+
+  #level-title {
+    font-size: 16pt;
+  }
+
+  .btn {
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+  }
 }
