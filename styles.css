@@ -51,3 +51,16 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.btn-start {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  visibility: hidden;
+}
+
+@media (max-width: 680px){
+  .btn-start{
+    visibility: visible;
+  }
+}

@@ -80,12 +80,16 @@ function gameOver(){
         }, 200);
 }
 
-setSounds();
-
-$(document).keypress(function(){
+function initiate(){
     if(level == 0){
         nextSequence();
     }
+}
+
+setSounds();
+
+$(document).keypress(function(){
+    initiate();
 })
 
 $(".btn").click(function(){
@@ -106,6 +110,10 @@ $(".btn").click(function(){
         gamePattern.splice(0, gamePattern.length);
         userClickedPattern.splice(0, userChosenColor.length);
     }
+})
+
+$("#start").click(function(){
+    initiate();
 })
 
 
