@@ -2,22 +2,9 @@
 let gamePattern = [];
 let userClickedPattern = [];
 let buttonColors = ["red", "blue", "green", "yellow"];
-let redSound;
-let blueSound;
-let greenSound;
-let yellowSound;
-let wrongSound;
 let randomNumber;
 let randomChosenColor;
 let level = 1;
-
-setSounds = function(){
-    redSound = new Audio("./sounds/red.mp3");
-    blueSound = new Audio("./sounds/blue.mp3");
-    greenSound = new Audio("./sounds/green.mp3");
-    yellowSound = new Audio("./sounds/yellow.mp3");
-    wrongSound = new Audio("./sounds/wrong.mp3");
-}
 
 function getRandomNumber(){
     return Math.floor(Math.random() * 4);
@@ -37,7 +24,7 @@ playBack = function(i){
     if(i < gamePattern.length){
         buttonAnimation(gamePattern[i]);
         playSound(gamePattern[i]);
-        setTimeout(function() {playBack(i + 1)}, 700);
+        setTimeout(function() {playBack(i + 1)}, 500);
     }
 }
 
@@ -50,22 +37,28 @@ function buttonAnimation(color){
 }
 
 function playSound(color){
+    
     switch (color){
         case "red" :
+            let redSound = new Audio("./sounds/red.mp3");
             redSound.play();
             break;
         case "blue" :
+            let blueSound = new Audio("./sounds/blue.mp3");
             blueSound.play();
             break;
         case "green" :
+            let greenSound = new Audio("./sounds/green.mp3");
             greenSound.play();
             break;
         case "yellow" :
+            let yellowSound = new Audio("./sounds/yellow.mp3");
             yellowSound.play();
             break;
         default :
+            let wrongSound = new Audio("./sounds/wrong.mp3");
             wrongSound.play();
-    }
+        }
 }
 
 function setHeader(){
@@ -92,8 +85,6 @@ function initiate(){
         nextSequence();
     }
 }
-
-setSounds();
 
 $(document).keypress(function(){
     initiate();
